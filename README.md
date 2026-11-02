@@ -5,6 +5,11 @@ An interactive web app that simulates a DC motor under PID control, reports over
 **[Try the live app](https://pid-tuner-cfvny6n8x9xmawlns3pzmk.streamlit.app/)**
 
 ![Demo](results/demo.gif)
+### 3D view
+
+![3D motor](results/motor_3d_small.gif)
+
+The wheel's rotation is the integral of the simulated shaft speed, drawn at 6x real speed so it is visible. [Full-quality video (MP4)](results/motor_3d.mp4)
 
 ![App screenshot](results/app_screenshot.png)
 

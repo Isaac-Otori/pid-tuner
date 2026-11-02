@@ -63,7 +63,8 @@ st.sidebar.button("Ziegler-Nichols", on_click=use_zn)
 st.sidebar.button("Genetic algorithm (takes a few seconds)", on_click=use_ga)
 
 st.sidebar.header("Simulation")
-setpoint = st.sidebar.slider("Target speed (rad/s)", 0.5, 5.0, 1.0, step=0.1)
+setpoint = st.sidebar.slider("Target speed (rad/s)", 0.5, 2.0, 1.0, step=0.1)
+st.sidebar.caption("A 24 V supply tops out near 2.4 rad/s.")
 duration = st.sidebar.slider("Duration (s)", 2.0, 10.0, 5.0, step=0.5)
 
 # ---------- Run the simulation ----------
