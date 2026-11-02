@@ -114,6 +114,6 @@ with st.expander("What do Kp, Ki and Kd do?"):
         "P-only leaves a permanent gap.\n"
         "- **Ki** adds up past error to remove that gap. Too much causes "
         "overshoot.\n"
-        "- **Kd** reacts to how fast the speed is changing. It damps "
-        "overshoot."
+        "- **Kd** reacts to how fast the speed is changing. A little damps "
+        "overshoot, but too much makes it worse."
     )
