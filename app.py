@@ -25,14 +25,26 @@ def set_gains(kp, ki, kd):
     st.session_state["kd"] = snap(kd, 1.0, 0.0, 100.0)
 
 
-def use_zn():
+# cache_data remembers the answer, so clicking a button a second time is
+# instant (important when many visitors use the public app).
+@st.cache_data
+def cached_zn():
     gains, _ = ziegler_nichols()
-    set_gains(*gains)
+    return tuple(float(g) for g in gains)
+
+
+@st.cache_data(show_spinner="Running genetic algorithm...")
+def cached_ga():
+    gains, _ = genetic_algorithm(verbose=False)
+    return tuple(float(g) for g in gains)
+
+
+def use_zn():
+    set_gains(*cached_zn())
 
 
 def use_ga():
-    gains, _ = genetic_algorithm(verbose=False)
-    set_gains(*gains)
+    set_gains(*cached_ga())
 
 
 # ---------- Sidebar controls ----------
